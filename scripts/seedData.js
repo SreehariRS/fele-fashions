@@ -189,28 +189,28 @@ const seedDatabase = async () => {
       tls: true,
       tlsAllowInvalidCertificates: false
     });
-    console.log('✅ Connected to MongoDB');
+    console.log(' Connected to MongoDB');
 
     // Clear existing data
     await Category.deleteMany({});
     await Product.deleteMany({});
-    console.log('✅ Cleared existing data');
+    console.log(' Cleared existing data');
 
     // Insert categories
     await Category.insertMany(categories);
-    console.log('✅ Inserted categories');
+    console.log(' Inserted categories');
 
     // Insert products
     await Product.insertMany(products);
-    console.log('✅ Inserted products');
+    console.log(' Inserted products');
 
-    console.log('🎉 Database seeded successfully!');
-    console.log(`📊 Total Categories: ${categories.length}`);
-    console.log(`📦 Total Products: ${products.length}`);
+    console.log(' Database seeded successfully!');
+    console.log(` Total Categories: ${categories.length}`);
+    console.log(`Total Products: ${products.length}`);
     
     process.exit(0);
   } catch (error) {
-    console.error('❌ Error seeding database:', error);
+    console.error(' Error seeding database:', error);
     process.exit(1);
   }
 };
